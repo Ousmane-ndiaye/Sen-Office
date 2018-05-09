@@ -18,7 +18,7 @@ class AdminController extends Controller
 
 
     /**
-     * acceuil admin
+     * accueil admin
      * @Route("/admin/acceuil",name="acceuil")
      */
     public function acceuilAction()

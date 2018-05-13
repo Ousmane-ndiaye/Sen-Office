@@ -1,8 +1,8 @@
+senoffice:
+    resource: "@SenofficeBundle/Resources/config/routing.yml"
+    prefix:   /sen-office
+
 office:
     resource: "@OfficeBundle/Controller/"
     type:     annotation
     prefix:   /
-
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation

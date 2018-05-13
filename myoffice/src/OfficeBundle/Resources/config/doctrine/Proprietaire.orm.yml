@@ -1,0 +1,56 @@
+OfficeBundle\Entity\Proprietaire:
+    type: entity
+    table: Proprietaire
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomcomplet:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: nomComplet
+        numpiece:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: numPiece
+        adresse:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        telephone:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        login:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        password:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

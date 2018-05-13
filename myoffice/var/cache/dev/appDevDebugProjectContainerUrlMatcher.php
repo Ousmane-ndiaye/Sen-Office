@@ -113,6 +113,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // adob_senoffice_front_index
+        if ('/sen-office/acceuil' === $pathinfo) {
+            return array (  '_controller' => 'ADOB\\SenofficeBundle\\Controller\\FrontController::indexAction',  '_route' => 'adob_senoffice_front_index',);
+        }
+
+        // adob_senoffice_front_catalogue
+        if ('/sen-office/catalogue' === $pathinfo) {
+            return array (  '_controller' => 'ADOB\\SenofficeBundle\\Controller\\FrontController::catalogueAction',  '_route' => 'adob_senoffice_front_catalogue',);
+        }
+
         // loginadmin
         if ('/login' === $pathinfo) {
             return array (  '_controller' => 'OfficeBundle\\Controller\\AdminController::loginAction',  '_route' => 'loginadmin',);
@@ -131,15 +141,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // catalogue
         if ('/catalogue' === $pathinfo) {
             return array (  '_controller' => 'OfficeBundle\\Controller\\FrontController::catalogueAction',  '_route' => 'catalogue',);
-        }
-
-        // homepage
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
-            }
-
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

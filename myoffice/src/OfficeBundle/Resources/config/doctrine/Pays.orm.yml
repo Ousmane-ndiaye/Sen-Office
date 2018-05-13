@@ -1,0 +1,21 @@
+OfficeBundle\Entity\Pays:
+    type: entity
+    table: Pays
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nompays:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: nomPays
+    lifecycleCallbacks: {  }

@@ -102,10 +102,10 @@
 						<img src="{{asset ('assets/template/images/stars.png')}}" alt="">
 						<h2>Bienvenue Sen Office</h2>
 						<p>Vos séminaires et réunions dans le lieu idéal</p>
-                        <div class="col-md-4">	
+                        <div class="col-md-3 ">	
                         </div>
-						<div class="col-md-3">
-						    <center><button type="submit" class="btn btn-main btn-block comment ça marche">Comment ça marche?</button></center>
+						<div class="col-md-4" style="margin-left: 9%;">
+						    <center><button type="submit" class="btn btn-main btn-block">Comment ça marche?</button></center>
                         </div>
                     </div>
                 </div>
@@ -116,9 +116,9 @@
 						<img src="{{asset ('assets/template/images/stars.png')}}" alt="">
 						<h2>Sen Office</h2>
 						<p>Pour faire de chaque rencontre un moment qui vous inspire.</p>
-						<div class="col-md-4">	
+						<div class="col-md-3">	
 						</div>
-                        <div class="col-md-3">
+                        <div class="col-md-4" style="margin-left: 9%;">
                             <center><button type="submit" class="btn btn-main btn-block comment ça marche">Comment ça marche?</button></center>
                         </div>
 					</div>
@@ -129,9 +129,9 @@
 						<img src="{{asset ('assets/template/images/stars.png')}}" alt="">
 						<h2>Sen Office</h2>
 						<p>L'endroit parfait pour vos événements.</p>
-						<div class="col-md-4">	
+						<div class="col-md-3">	
 						</div>
-                        <div class="col-md-3">
+                        <div class="col-md-4" style="margin-left: 9%;">
                             <center><button type="submit" class="btn btn-main btn-block comment ça marche">Comment ça marche?</button></center>
                         </div>
 					</div>
@@ -146,33 +146,52 @@
         {% endblock %}
         {% block recherche %}
 		<div class="mg-book-now">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-3">
-						<h3 class="mg-bn-title">&nbsp; Rechechez <span class="mg-bn-big">Par lieux & disponiblité</span></h3>
+						<h5 class="mg-bn-title">Recherchez <span class="mg-bn-big">Par lieux & disponiblité</span></h5>
 					</div>
 					<div class="col-md-9">
 						<div class="mg-bn-forms">
 							<form>
 								<div class="row">
-									<div class="col-md-3 col-xs-6">
+									<div class="col-md-2 col-xs-6">
 										<div class="input-group date mg-check-in">
 											<div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
 											<input type="text" class="form-control" id="" placeholder="Date de début">
 										</div>
 									</div>
-									<div class="col-md-3 col-xs-6">
+									<div class="col-md-2 col-xs-6">
 										<div class="input-group date mg-check-out">
 											<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
 											<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Date de fin">
 										</div>
 									</div>
-									<div class="col-md-3">
+									<!--
+									<div class="col-md-3 col-xs-6">
+										<select class="cs-select cs-skin-elastic">
+											<option value="" disabled selected>Type</option>
+											<option value="1">Séminaire</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+										</select>
+									</div>
+									<div class="col-md-3 col-xs-6">
+										<select class="cs-select cs-skin-elastic">
+											<option value="" disabled selected>Lieu</option>
+											<option value="0">0</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
+									</div>-->
+									<div class="col-md-6">
 										<div class="row">
 											<div class="col-xs-6">
 												<select class="cs-select cs-skin-elastic">
 													<option value="" disabled selected>Type</option>
-													<option value="1">1</option>
+													<option value="1">Séminaire</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
 													<option value="4">4</option>
@@ -181,7 +200,7 @@
 											<div class="col-xs-6">
 												<select class="cs-select cs-skin-elastic">
 													<option value="" disabled selected>Lieu</option>
-													<option value="0">0</option>
+													<option value="0">Dakar</option>
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
@@ -189,7 +208,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-2">
 										<button type="submit" class="btn btn-main btn-block">Rechercher</button>
 									</div>
 								</div>

@@ -15,20 +15,20 @@ class __TwigTemplate_ff2814c4535e25ff5cc9ea8737fa8de347b740af97908b15085b3dd34d2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1dfd2bfb8941d15f283a84c927f59429c065dfea5f6012b13c209a4785299621 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1dfd2bfb8941d15f283a84c927f59429c065dfea5f6012b13c209a4785299621->enter($__internal_1dfd2bfb8941d15f283a84c927f59429c065dfea5f6012b13c209a4785299621_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Framework/Form/search_widget.html.php"));
+        $__internal_085981f8339b914ee77e945d9423b1e75c64d4557485a08ffe823fa5d1aa82c3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085981f8339b914ee77e945d9423b1e75c64d4557485a08ffe823fa5d1aa82c3->enter($__internal_085981f8339b914ee77e945d9423b1e75c64d4557485a08ffe823fa5d1aa82c3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Framework/Form/search_widget.html.php"));
 
-        $__internal_767efa697cdeb1e871886997f9ef55ac1fcc27b544a94ee5e3a805bd70ee46d1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_767efa697cdeb1e871886997f9ef55ac1fcc27b544a94ee5e3a805bd70ee46d1->enter($__internal_767efa697cdeb1e871886997f9ef55ac1fcc27b544a94ee5e3a805bd70ee46d1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Framework/Form/search_widget.html.php"));
+        $__internal_77b06b3b22092d79c16f01f89b07e729ee7e6a3e221d35c56705bda5f2cba2c1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_77b06b3b22092d79c16f01f89b07e729ee7e6a3e221d35c56705bda5f2cba2c1->enter($__internal_77b06b3b22092d79c16f01f89b07e729ee7e6a3e221d35c56705bda5f2cba2c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Framework/Form/search_widget.html.php"));
 
         // line 1
         echo "<?php echo \$view['form']->block(\$form, 'form_widget_simple', array('type' => isset(\$type) ? \$type : 'search')) ?>
 ";
         
-        $__internal_1dfd2bfb8941d15f283a84c927f59429c065dfea5f6012b13c209a4785299621->leave($__internal_1dfd2bfb8941d15f283a84c927f59429c065dfea5f6012b13c209a4785299621_prof);
+        $__internal_085981f8339b914ee77e945d9423b1e75c64d4557485a08ffe823fa5d1aa82c3->leave($__internal_085981f8339b914ee77e945d9423b1e75c64d4557485a08ffe823fa5d1aa82c3_prof);
 
         
-        $__internal_767efa697cdeb1e871886997f9ef55ac1fcc27b544a94ee5e3a805bd70ee46d1->leave($__internal_767efa697cdeb1e871886997f9ef55ac1fcc27b544a94ee5e3a805bd70ee46d1_prof);
+        $__internal_77b06b3b22092d79c16f01f89b07e729ee7e6a3e221d35c56705bda5f2cba2c1->leave($__internal_77b06b3b22092d79c16f01f89b07e729ee7e6a3e221d35c56705bda5f2cba2c1_prof);
 
     }
 

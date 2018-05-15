@@ -9,7 +9,20 @@
                 padding-bottom: 35px;
                 border-bottom: 3px solid #e7b315;
             }
-        </style>
+		</style>
+		
+
+		<!-- Plugins css-->
+        <!--<link href="{{asset ('ac/assets/plugins/tagsinput/jquery.tagsinput.css')}}" rel="stylesheet">
+        <link href="{{asset ('ac/assets/plugins/toggles/toggles.css')}}" rel="stylesheet">-->
+        <link href="{{asset ('ac/assets/plugins/jquery-multi-select/multi-select.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{asset ('ac/assets/plugins/select2/dist/css/select2.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{asset ('ac/assets/plugins/select2/dist/css/select2-bootstrap.css')}}" rel="stylesheet" type="text/css">
+
+        <link href="{{asset ('ac/assets/css/icons.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{asset ('ac/assets/css/components.css')}}" rel="stylesheet" type="text/css">
+
+
         {% block stylesheets %}
         <link href="{{asset ('assets/template/css/bootstrap.min.css')}}" rel="stylesheet">
 		<link href="{{asset ('assets/template/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -21,6 +34,7 @@
 		<link href="{{asset ('assets/template/css/bootstrap-datepicker3.min.css')}}" rel="stylesheet">
 		<link href="{{asset ('assets/template/css/freepik.hotels.css')}}" rel="stylesheet">
 		<link href="{{asset ('assets/template/css/style.css')}}" rel="stylesheet">
+		<link href="{{asset ('assets/autocomplete/ac.css')}}" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -146,69 +160,38 @@
         {% endblock %}
         {% block recherche %}
 		<div class="mg-book-now">
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row">
 					<div class="col-md-3">
-						<h5 class="mg-bn-title">Recherchez <span class="mg-bn-big">Par lieux & disponiblité</span></h5>
+						<h5 class="mg-bn-title">&nbsp;Recherchez <span class="mg-bn-big">Par lieux & disponiblité</span></h5>
 					</div>
 					<div class="col-md-9">
 						<div class="mg-bn-forms">
-							<form>
+							<form action="#" class="form-horizontal">
 								<div class="row">
-									<div class="col-md-2 col-xs-6">
-										<div class="input-group date mg-check-in">
+									<div class="col-md-3 col-xs-12">
+										<select class="select2 form-control" style="padding: 0;" data-placeholder="Choisir une localité...">
+											<option value="">&nbsp;</option>
+											{% for commune in communes %}
+												<option value="{{commune.id}}">{{commune.nomCommune}}</option>
+											{% endfor %}
+										</select>
+									</div>
+									<div class="col-md-4 col-xs-12">
+										<select class="cs-select cs-skin-elastic">
+											<option value="" disabled selected>Type d'évènement</option>
+											{% for type in types %}
+												<option value="{{type.id}}">{{type.nomtype}}</option>
+											{% endfor %}
+										</select>
+									</div>
+									<div class="col-md-3 col-xs-12">
+										<div class="input-group">
 											<div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
-											<input type="text" class="form-control" id="" placeholder="Date de début">
+											<input type="number" class="form-control" name="nbreDePlaces" id="nbreDePlaces" placeholder="Nombre de participants">
 										</div>
 									</div>
-									<div class="col-md-2 col-xs-6">
-										<div class="input-group date mg-check-out">
-											<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-											<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Date de fin">
-										</div>
-									</div>
-									<!--
-									<div class="col-md-3 col-xs-6">
-										<select class="cs-select cs-skin-elastic">
-											<option value="" disabled selected>Type</option>
-											<option value="1">Séminaire</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-										</select>
-									</div>
-									<div class="col-md-3 col-xs-6">
-										<select class="cs-select cs-skin-elastic">
-											<option value="" disabled selected>Lieu</option>
-											<option value="0">0</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-										</select>
-									</div>-->
-									<div class="col-md-6">
-										<div class="row">
-											<div class="col-xs-6">
-												<select class="cs-select cs-skin-elastic">
-													<option value="" disabled selected>Type</option>
-													<option value="1">Séminaire</option>
-													<option value="2">2</option>
-													<option value="3">3</option>
-													<option value="4">4</option>
-												</select>
-											</div>
-											<div class="col-xs-6">
-												<select class="cs-select cs-skin-elastic">
-													<option value="" disabled selected>Lieu</option>
-													<option value="0">Dakar</option>
-													<option value="1">1</option>
-													<option value="2">2</option>
-													<option value="3">3</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-2">
+									<div class="col-md-2 col-xs-12">
 										<button type="submit" class="btn btn-main btn-block">Rechercher</button>
 									</div>
 								</div>
@@ -566,6 +549,8 @@
         {% block javascripts %}
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="{{asset ('assets/template/js/jquery.min.js')}}"></script>
+		<!--<script src="{{asset ('assets/js/jquery-3.3.1.min.js')}}" ></script>-->
+		<script src="{{asset ('assets/autocomplete/ac.js')}}"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="{{asset ('assets/template/js/bootstrap.min.js')}}"></script>
 		<script src="{{asset ('assets/template/js/owl.carousel.min.js')}}"></script>
@@ -582,7 +567,47 @@
         <script src="{{asset ('assets/template/js/script.js')}}"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
         {% endblock %}
-        <!-- Fin bloc script -->
+		<!-- Fin bloc script -->
+		
+
+		<script>
+            var resizefunc = [];
+        </script>
+
+		<!-- Main  -->
+        <script src="{{asset ('ac/assets/js/detect.js')}}"></script>
+        <script src="{{asset ('ac/assets/js/fastclick.js')}}"></script>
+        <script src="{{asset ('ac/assets/js/jquery.slimscroll.js')}}"></script>
+        <script src="{{asset ('ac/assets/js/jquery.blockUI.js')}}"></script>
+        <script src="{{asset ('ac/assets/js/waves.js')}}"></script>
+        <script src="{{asset ('ac/assets/js/wow.min.js')}}"></script>
+        <script src="{{asset ('ac/assets/js/jquery.nicescroll.js')}}"></script>
+        <script src="{{asset ('ac/assets/js/jquery.scrollTo.min.js')}}"></script>
+
+        <script src="{{asset ('ac/assets/js/jquery.app.js')}}"></script>
+
+        <script src="{{asset ('ac/assets/plugins/select2/dist/js/select2.min.js')}}" type="text/javascript"></script>
+
+        <script src="{{asset ('ac/assets/plugins/tagsinput/jquery.tagsinput.min.js')}}"></script>
+        <script src="{{asset ('ac/assets/plugins/toggles/toggles.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset ('ac/assets/plugins/jquery-multi-select/jquery.quicksearch.js')}}"></script>
+        <script src="{{asset ('ac/assets/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset ('ac/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js')}}" type="text/javascript"></script>
+
+
+
+
+        <script>
+            jQuery(document).ready(function() {
+
+                // Select2
+                jQuery(".select2").select2({
+					width: '100%'
+				});
+				
+				document.getElementById("select2-chosen-2").setAttribute("style", "color: white");
+            });
+        </script>
     {% endblock %}
     </body>
 </html>

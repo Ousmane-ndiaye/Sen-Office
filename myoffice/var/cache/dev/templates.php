@@ -86,6 +86,8 @@
   'OfficeBundle:connexion:login.html.twig' => __DIR__.'/../../../src/OfficeBundle/Resources/views/connexion/login.html.twig',
   'OfficeBundle:Front:catalogue.html.twig' => __DIR__.'/../../../src/OfficeBundle/Resources/views/Front/catalogue.html.twig',
   'OfficeBundle:Front:acceuil.html.twig' => __DIR__.'/../../../src/OfficeBundle/Resources/views/Front/acceuil.html.twig',
+  'SenofficeBundle:Front:catalogue.html.twig' => __DIR__.'/../../../src/ADOB/SenofficeBundle/Resources/views/Front/catalogue.html.twig',
+  'SenofficeBundle:Front:index.html.twig' => __DIR__.'/../../../src/ADOB/SenofficeBundle/Resources/views/Front/index.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views/Profiler/dump.html.twig',
   'WebProfilerBundle:Router:panel.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig',
   'WebProfilerBundle:Profiler:search.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/search.html.twig',

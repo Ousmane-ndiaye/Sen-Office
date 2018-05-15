@@ -113,34 +113,40 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // adob_senoffice_front_index
-        if ('/sen-office/acceuil' === $pathinfo) {
-            return array (  '_controller' => 'ADOB\\SenofficeBundle\\Controller\\FrontController::indexAction',  '_route' => 'adob_senoffice_front_index',);
-        }
+        elseif (0 === strpos($pathinfo, '/sen-office')) {
+            // adob_senoffice_front_index
+            if ('/sen-office/acceuil' === $pathinfo) {
+                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                    $allow = array_merge($allow, array('GET', 'POST'));
+                    goto not_adob_senoffice_front_index;
+                }
 
-        // adob_senoffice_front_catalogue
-        if ('/sen-office/catalogue' === $pathinfo) {
-            return array (  '_controller' => 'ADOB\\SenofficeBundle\\Controller\\FrontController::catalogueAction',  '_route' => 'adob_senoffice_front_catalogue',);
-        }
+                return array (  '_controller' => 'ADOB\\SenofficeBundle\\Controller\\FrontController::indexAction',  '_route' => 'adob_senoffice_front_index',);
+            }
+            not_adob_senoffice_front_index:
 
-        // loginadmin
-        if ('/login' === $pathinfo) {
-            return array (  '_controller' => 'OfficeBundle\\Controller\\AdminController::loginAction',  '_route' => 'loginadmin',);
-        }
+            // adob_senoffice_front_catalogue
+            if ('/sen-office/catalogue' === $pathinfo) {
+                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                    $allow = array_merge($allow, array('GET', 'POST'));
+                    goto not_adob_senoffice_front_catalogue;
+                }
 
-        // acceuil
-        if ('/admin/acceuil' === $pathinfo) {
-            return array (  '_controller' => 'OfficeBundle\\Controller\\AdminController::acceuilAction',  '_route' => 'acceuil',);
-        }
+                return array (  '_controller' => 'ADOB\\SenofficeBundle\\Controller\\FrontController::catalogueAction',  '_route' => 'adob_senoffice_front_catalogue',);
+            }
+            not_adob_senoffice_front_catalogue:
 
-        // office_front_acceuil
-        if ('/acceuil' === $pathinfo) {
-            return array (  '_controller' => 'OfficeBundle\\Controller\\FrontController::acceuilAction',  '_route' => 'office_front_acceuil',);
-        }
+            // adob_senoffice_front_selectcommune
+            if ('/sen-office/select/commune' === $pathinfo) {
+                if ('POST' !== $canonicalMethod) {
+                    $allow[] = 'POST';
+                    goto not_adob_senoffice_front_selectcommune;
+                }
 
-        // catalogue
-        if ('/catalogue' === $pathinfo) {
-            return array (  '_controller' => 'OfficeBundle\\Controller\\FrontController::catalogueAction',  '_route' => 'catalogue',);
+                return array (  '_controller' => 'ADOB\\SenofficeBundle\\Controller\\FrontController::selectCommuneAction',  '_route' => 'adob_senoffice_front_selectcommune',);
+            }
+            not_adob_senoffice_front_selectcommune:
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
